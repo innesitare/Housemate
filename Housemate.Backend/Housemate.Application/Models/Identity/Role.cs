@@ -1,4 +1,4 @@
-namespace Housemate.Application.Models.Identity;
+﻿namespace Housemate.Application.Models.Identity;
 
 public enum Role
 {

@@ -37,6 +37,5 @@ public static class ApiEndpoints
     public static class Wastes
     {
         private const string Base = $"{ApiBase}/wastes";
-        
     }
 }

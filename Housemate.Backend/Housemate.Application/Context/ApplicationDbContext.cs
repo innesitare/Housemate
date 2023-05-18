@@ -1,5 +1,4 @@
 using System.Reflection;
-using Housemate.Application.EntityConfigurations;
 using Housemate.Application.Models.HousingTasks;
 using Housemate.Application.Models.StudentInfo;
 using Housemate.Application.Models.Wastes;
@@ -20,7 +19,5 @@ public class ApplicationDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
-        base.OnModelCreating(modelBuilder);
     }
 }

@@ -1,0 +1,22 @@
+name: .NET build
+
+on:
+  push:
+    branches: [ "wip", "main", "client", "web"]
+  pull_request:
+    branches: [ "wip" , "main", "client", "web"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: dotnet restore **/*.csproj
+      
+    - name: Build projects
+      run: dotnet build **/*.csproj --configuration Release --no-restore

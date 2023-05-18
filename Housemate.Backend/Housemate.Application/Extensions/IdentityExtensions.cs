@@ -1,6 +1,6 @@
+using Housemate.Application.Context;
 using Housemate.Application.Models.Identity;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Housemate.Application.Extensions;

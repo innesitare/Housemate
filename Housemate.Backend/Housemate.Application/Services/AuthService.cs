@@ -3,7 +3,7 @@ using Housemate.Application.Services.Abstractions;
 using Microsoft.AspNetCore.Identity;
 
 namespace Housemate.Application.Services;
-
+    
 public sealed class AuthService : IAuthService
 {
     private readonly SignInManager<ApplicationUser> _signInManager;
@@ -28,9 +28,8 @@ public sealed class AuthService : IAuthService
             Password = viewModel.Password,
             Role = viewModel.Role,
         };
-
+        
         var result = await _signInManager.UserManager.CreateAsync(user, user.Password);
-
         await _signInManager.UserManager.AddToRoleAsync(user, user.Role.ToString());
         if (!result.Succeeded)
         {
