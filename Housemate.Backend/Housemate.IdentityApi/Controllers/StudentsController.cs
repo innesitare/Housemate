@@ -17,7 +17,7 @@ public sealed class StudentsController : ControllerBase
     {
         _studentService = studentService;
     }
-    
+
     [HttpGet(ApiEndpoints.Students.Get)]
     public async Task<IActionResult> Get([FromRoute] Guid id, CancellationToken cancellationToken)
     {
@@ -26,6 +26,15 @@ public sealed class StudentsController : ControllerBase
         return student is not null
             ? Ok(student.MapToResponse())
             : NotFound();
+    }
+
+    [HttpGet(ApiEndpoints.Students.GetAll)]
+    public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
+    {
+        var students = await _studentService.GetAllAsync(cancellationToken);
+        var responses = students.Select(s => s.MapToResponse());
+
+        return Ok(responses);
     }
 
     [HttpGet(ApiEndpoints.Students.GetByEmail)]

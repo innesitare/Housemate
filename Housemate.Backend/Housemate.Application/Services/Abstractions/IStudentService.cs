@@ -4,6 +4,8 @@ namespace Housemate.Application.Services.Abstractions;
 
 public interface IStudentService
 {
+    Task<IEnumerable<Student>> GetAllAsync(CancellationToken cancellationToken = default);
+    
     Task<Student?> GetByIdAsync(string id, CancellationToken cancellationToken = default);
     
     Task<Student?> GetByEmailAsync(string email, CancellationToken cancellationToken = default);
