@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Housemate.GUI", "Housemate.GUI\Housemate.GUI.csproj", "{B29C61BE-D026-4692-9C34-1BBA3CBF1118}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Housemate.Application", "Housemate.Backend\Housemate.Application\Housemate.Application.csproj", "{E388C6C7-4B5A-4D57-9964-40ED2A93A323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Housemate.Contracts", "Housemate.Backend\Housemate.Contracts\Housemate.Contracts.csproj", "{0F5824BF-F48E-4E12-994F-92F06C86D1B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Housemate.IdentityApi", "Housemate.Backend\Housemate.IdentityApi\Housemate.IdentityApi.csproj", "{444AB31F-527C-48C4-90CA-C075149922CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Housemate.ApiGateway", "Housemate.ApiGateway\Housemate.ApiGateway.csproj", "{FFEC5057-A095-4215-8A2E-A3BBDD8B5300}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Housemate.WastesApi", "Housemate.Backend\Housemate.WastesApi\Housemate.WastesApi.csproj", "{ADFF3513-F9DD-412E-A8D7-BF7670F4CE6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Housemate.HousingTasksApi", "Housemate.Backend\Housemate.HousingTasksApi\Housemate.HousingTasksApi.csproj", "{C9E4308A-C7D2-4A11-9C14-44190A881726}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B29C61BE-D026-4692-9C34-1BBA3CBF1118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B29C61BE-D026-4692-9C34-1BBA3CBF1118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B29C61BE-D026-4692-9C34-1BBA3CBF1118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B29C61BE-D026-4692-9C34-1BBA3CBF1118}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E388C6C7-4B5A-4D57-9964-40ED2A93A323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E388C6C7-4B5A-4D57-9964-40ED2A93A323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E388C6C7-4B5A-4D57-9964-40ED2A93A323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E388C6C7-4B5A-4D57-9964-40ED2A93A323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F5824BF-F48E-4E12-994F-92F06C86D1B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5824BF-F48E-4E12-994F-92F06C86D1B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5824BF-F48E-4E12-994F-92F06C86D1B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5824BF-F48E-4E12-994F-92F06C86D1B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{444AB31F-527C-48C4-90CA-C075149922CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{444AB31F-527C-48C4-90CA-C075149922CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{444AB31F-527C-48C4-90CA-C075149922CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{444AB31F-527C-48C4-90CA-C075149922CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFEC5057-A095-4215-8A2E-A3BBDD8B5300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFEC5057-A095-4215-8A2E-A3BBDD8B5300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFEC5057-A095-4215-8A2E-A3BBDD8B5300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFEC5057-A095-4215-8A2E-A3BBDD8B5300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADFF3513-F9DD-412E-A8D7-BF7670F4CE6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADFF3513-F9DD-412E-A8D7-BF7670F4CE6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADFF3513-F9DD-412E-A8D7-BF7670F4CE6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADFF3513-F9DD-412E-A8D7-BF7670F4CE6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9E4308A-C7D2-4A11-9C14-44190A881726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E4308A-C7D2-4A11-9C14-44190A881726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E4308A-C7D2-4A11-9C14-44190A881726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E4308A-C7D2-4A11-9C14-44190A881726}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal
