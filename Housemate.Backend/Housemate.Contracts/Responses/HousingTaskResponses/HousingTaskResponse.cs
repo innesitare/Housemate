@@ -10,5 +10,5 @@ public class HousingTaskResponse
     
     public required int Priority { get; init; }
     
-    public required DateTime AssignedAt { get; init; }
+    public required DateTime CreatedAt { get; init; }
 }

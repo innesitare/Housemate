@@ -1,5 +1,9 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Housemate.Application.Context;
 using Housemate.Application.Extensions;
+using Housemate.Application.Filters;
+using Housemate.Application.Helpers;
 using Housemate.Application.Models.Identity;
 using Housemate.Application.Repositories.Abstractions;
 using Housemate.Application.Services.Abstractions;
@@ -23,11 +27,16 @@ builder.Services.AddApplicationService<IStudentService>();
 builder.Services.AddApplicationService<IAuthService>();
 builder.Services.AddApplicationService<ITokenWriter<ApplicationUser>>();
 
+builder.Services.AddIdentityConfiguration();
+
 builder.Services.AddOptions<JwtSettings>()
     .Bind(builder.Configuration.GetSection("Jwt"))
     .ValidateOnStart();
 
-builder.Services.AddIdentityConfiguration();
+builder.Services.AddFluentValidationAutoValidation()
+    .AddValidatorsFromAssemblyContaining<IApplicationMarker>()
+    .AddFilter<ValidationFilter>();
+
 
 var app = builder.Build();
 

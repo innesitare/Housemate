@@ -25,9 +25,9 @@ public sealed class HousingTaskRepository : IHousingTaskRepository
         return _dbContext.HousingTasks;
     }
 
-    public async Task<HousingTask?> GetByIdAsync(string id, CancellationToken cancellationToken = default)
+    public async Task<HousingTask?> GetByIdAsync(string housingTaskId, CancellationToken cancellationToken = default)
     {
-        var housingTask = await _dbContext.HousingTasks.FindAsync(new object?[] {id}, cancellationToken);
+        var housingTask = await _dbContext.HousingTasks.FindAsync(new object?[] {housingTaskId}, cancellationToken);
 
         return housingTask;
     }
@@ -54,9 +54,9 @@ public sealed class HousingTaskRepository : IHousingTaskRepository
         return housingTask;
     }
 
-    public async Task<bool> DeleteByIdAsync(string id, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteByIdAsync(string housingTaskId, CancellationToken cancellationToken = default)
     {
-        var housingTask = await _dbContext.HousingTasks.FindAsync(new object?[] {id}, cancellationToken);
+        var housingTask = await _dbContext.HousingTasks.FindAsync(new object?[] {housingTaskId}, cancellationToken);
         if (housingTask is null)
         {
             return false;

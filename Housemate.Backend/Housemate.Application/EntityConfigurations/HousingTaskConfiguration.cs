@@ -24,7 +24,7 @@ public sealed class HousingTaskConfiguration : IEntityTypeConfiguration<HousingT
             .IsUnicode(false)
             .HasMaxLength(100);
 
-        builder.Property(ht => ht.AssignedAt)
+        builder.Property(ht => ht.CreatedAt)
             .IsRequired();
 
         builder.Property(ht => ht.Priority)
