@@ -14,8 +14,6 @@ public static class ContractMapping
     {
         return new HousingTask
         {
-            Id = request.Id,
-            AssignedAt = request.AssignedAt,
             Name = request.Name,
             Description = request.Description,
             Priority = (TaskPriority) request.Priority

@@ -10,9 +10,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Housemate.IdentityApi", "Ho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Housemate.ApiGateway", "Housemate.ApiGateway\Housemate.ApiGateway.csproj", "{FFEC5057-A095-4215-8A2E-A3BBDD8B5300}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Housemate.WastesApi", "Housemate.Backend\Housemate.WastesApi\Housemate.WastesApi.csproj", "{ADFF3513-F9DD-412E-A8D7-BF7670F4CE6E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Housemate.HousingTasksApi", "Housemate.Backend\Housemate.HousingTasksApi\Housemate.HousingTasksApi.csproj", "{C9E4308A-C7D2-4A11-9C14-44190A881726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Housemate.WastesApi", "Housemate.Backend\Housemate.WastesApi\Housemate.WastesApi.csproj", "{387FE446-A68C-402F-832A-BEC5686EE1D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,14 +40,14 @@ Global
 		{FFEC5057-A095-4215-8A2E-A3BBDD8B5300}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFEC5057-A095-4215-8A2E-A3BBDD8B5300}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFEC5057-A095-4215-8A2E-A3BBDD8B5300}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ADFF3513-F9DD-412E-A8D7-BF7670F4CE6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ADFF3513-F9DD-412E-A8D7-BF7670F4CE6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ADFF3513-F9DD-412E-A8D7-BF7670F4CE6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ADFF3513-F9DD-412E-A8D7-BF7670F4CE6E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C9E4308A-C7D2-4A11-9C14-44190A881726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C9E4308A-C7D2-4A11-9C14-44190A881726}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9E4308A-C7D2-4A11-9C14-44190A881726}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9E4308A-C7D2-4A11-9C14-44190A881726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{387FE446-A68C-402F-832A-BEC5686EE1D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{387FE446-A68C-402F-832A-BEC5686EE1D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{387FE446-A68C-402F-832A-BEC5686EE1D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{387FE446-A68C-402F-832A-BEC5686EE1D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
