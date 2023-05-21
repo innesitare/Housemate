@@ -4,12 +4,25 @@ using Housemate.Application.Models.StudentInfo;
 using Housemate.Contracts.Requests.AuthRequests;
 using Housemate.Contracts.Requests.HousingTaskRequests;
 using Housemate.Contracts.Requests.StudentRequests;
+using Housemate.Contracts.Responses.HousingTaskResponses;
 using Housemate.Contracts.Responses.StudentResponses;
 
 namespace Housemate.IdentityApi.Mapping;
 
 public static class ContractMapping
 {
+    private static HousingTaskResponse MapToHousingTaskResponse(this HousingTask housingTask)
+    {
+        return new HousingTaskResponse
+        {
+            Id = housingTask.Id,
+            Name = housingTask.Name,
+            Description = housingTask.Description,
+            Priority = (int) housingTask.Priority,
+            CreatedAt = housingTask.CreatedAt
+        };
+    }
+    
     private static HousingTask MapToHousingTask(this CreateHousingTaskRequest request, string studentId)
     {
         return new HousingTask
@@ -29,7 +42,7 @@ public static class ContractMapping
             LastName = student.LastName,
             Birthdate = student.Birthdate,
             Email = student.Email,
-            Password = student.Password
+            HousingTasks = student.HousingTasks?.Select(h => h.MapToHousingTaskResponse())
         };
     }
     

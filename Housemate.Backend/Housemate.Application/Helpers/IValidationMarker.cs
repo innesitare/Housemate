@@ -1,5 +1,5 @@
 namespace Housemate.Application.Helpers;
 
-public interface IApplicationMarker
+public interface IValidationMarker
 {
 }

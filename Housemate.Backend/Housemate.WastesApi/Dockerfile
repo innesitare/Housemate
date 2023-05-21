@@ -5,10 +5,12 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["Housemate.Backend/Housemate.WastesApi/Housemate.WastesApi.csproj", "Housemate.Backend/Housemate.WastesApi/"]
-RUN dotnet restore "Housemate.Backend/Housemate.WastesApi/Housemate.WastesApi.csproj"
+COPY ["Housemate.WastesApi/Housemate.WastesApi.csproj", "Housemate.WastesApi/"]
+COPY ["Housemate.Application/Housemate.Application.csproj", "Housemate.Application/"]
+COPY ["Housemate.Contracts/Housemate.Contracts.csproj", "Housemate.Contracts/"]
+RUN dotnet restore "Housemate.WastesApi/Housemate.WastesApi.csproj"
 COPY . .
-WORKDIR "/src/Housemate.Backend/Housemate.WastesApi"
+WORKDIR "/src/Housemate.WastesApi"
 RUN dotnet build "Housemate.WastesApi.csproj" -c Release -o /app/build
 
 FROM build AS publish

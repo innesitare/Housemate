@@ -1,4 +1,6 @@
-﻿namespace Housemate.Contracts.Responses.StudentResponses;
+﻿using Housemate.Contracts.Responses.HousingTaskResponses;
+
+namespace Housemate.Contracts.Responses.StudentResponses;
 
 public sealed class StudentResponse
 {
@@ -9,8 +11,8 @@ public sealed class StudentResponse
     public required string LastName { get; init; }
     
     public required string Email { get; init; }
-    
-    public required string Password { get; init; }
-    
+
     public required DateOnly Birthdate { get; init; }
+    
+    public IEnumerable<HousingTaskResponse>? HousingTasks { get; init; }
 }

@@ -2,7 +2,7 @@
 
 public sealed class CreateWasteRequest
 {
-    public required DateOnly CollectionDay { get; set; }
+    public required DateOnly CollectionDay { get; init; }
     
-    public required int WasteType { get; set; }
+    public required int WasteType { get; init; }
 }

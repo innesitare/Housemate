@@ -9,12 +9,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Content Include="..\..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\Housemate.Application\Housemate.Application.csproj" />
       <ProjectReference Include="..\Housemate.Contracts\Housemate.Contracts.csproj" />
     </ItemGroup>
@@ -31,6 +25,12 @@
       </PackageReference>
       <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
       <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.30.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
     </ItemGroup>
 
 </Project>

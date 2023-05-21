@@ -6,6 +6,7 @@ using Housemate.Application.Filters;
 using Housemate.Application.Helpers;
 using Housemate.Application.Models.Identity;
 using Housemate.Application.Repositories.Abstractions;
+using Housemate.Application.Repositories.CachedRepositories;
 using Housemate.Application.Services.Abstractions;
 using Housemate.Application.Settings;
 
@@ -34,8 +35,10 @@ builder.Services.AddOptions<JwtSettings>()
     .ValidateOnStart();
 
 builder.Services.AddFluentValidationAutoValidation()
-    .AddValidatorsFromAssemblyContaining<IApplicationMarker>()
+    .AddValidatorsFromAssemblyContaining<IValidationMarker>(ServiceLifetime.Singleton)
     .AddFilter<ValidationFilter>();
+
+builder.Services.Decorate<IWasteRepository, CachedWasteRepository>();
 
 var app = builder.Build();
 

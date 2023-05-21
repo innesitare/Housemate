@@ -4,19 +4,19 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
         <UserSecretsId>db201321-7624-4514-9142-75334eeddb0b</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
-      <Content Include="..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
+      <ProjectReference Include="..\Housemate.Application\Housemate.Application.csproj" />
+      <ProjectReference Include="..\Housemate.Contracts\Housemate.Contracts.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Housemate.Application\Housemate.Application.csproj" />
-      <ProjectReference Include="..\Housemate.Contracts\Housemate.Contracts.csproj" />
+      <Content Include="..\..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
     </ItemGroup>
 
 </Project>
