@@ -23,7 +23,7 @@ public static class ContractMapping
             Id = id,
             Name = housingTaskRequest.Name,
             Description = housingTaskRequest.Description,
-            Priority = (TaskPriority) housingTaskRequest.Priority
+            Priority = (TaskPriority) housingTaskRequest.Priority,
         };
     }
     

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Housemate.Application.Migrations
+namespace Housemate.Application.Migrations.ApplicationDb
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -95,13 +95,16 @@ namespace Housemate.Application.Migrations
 
             modelBuilder.Entity("Housemate.Application.Models.Wastes.Waste", b =>
                 {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
+
                     b.Property<DateOnly>("CollectionDay")
                         .HasColumnType("date");
 
                     b.Property<int>("WasteType")
                         .HasColumnType("int");
 
-                    b.HasKey("CollectionDay");
+                    b.HasKey("Id");
 
                     b.ToTable("Wastes", (string)null);
                 });

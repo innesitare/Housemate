@@ -39,12 +39,14 @@ namespace Housemate.Application.Migrations.ApplicationDb
                 name: "Wastes",
                 columns: table => new
                 {
+                    Id = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     CollectionDay = table.Column<DateOnly>(type: "date", nullable: false),
                     WasteType = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Wastes", x => x.CollectionDay);
+                    table.PrimaryKey("PK_Wastes", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -54,11 +56,11 @@ namespace Housemate.Application.Migrations.ApplicationDb
                 {
                     Id = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Name = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Description = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    AssignedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Priority = table.Column<int>(type: "int", nullable: false),
                     StudentId = table.Column<string>(type: "varchar(255)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")

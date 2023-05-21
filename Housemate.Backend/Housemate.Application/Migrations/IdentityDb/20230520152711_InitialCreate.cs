@@ -1,8 +1,7 @@
-﻿using System;
+﻿#nullable disable
+
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-
-#nullable disable
 
 namespace Housemate.Application.Migrations.IdentityDb
 {

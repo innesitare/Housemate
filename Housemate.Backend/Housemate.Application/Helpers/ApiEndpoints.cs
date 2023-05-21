@@ -38,5 +38,19 @@ public static class ApiEndpoints
     public static class Wastes
     {
         private const string Base = $"{ApiBase}/wastes";
+        
+        public const string GetAll = $"{Base}";
+        public const string Get = $"{Base}/{{id:guid}}";
+        public const string Create = $"{Base}";
+        public const string Update = $"{Base}/{{id:guid}}";
+        public const string Delete = $"{Base}/{{id:guid}}";
+    }
+
+    public static class Weather
+    {
+        private const string Base = $"{ApiBase}/weather";
+        
+        public const string GetCurrent = $"{Base}/current/{{city}}";
+        public const string GetForecast = $"{Base}/forecast/{{city}}";
     }
 }

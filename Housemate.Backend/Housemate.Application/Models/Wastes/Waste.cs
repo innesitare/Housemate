@@ -2,7 +2,9 @@ namespace Housemate.Application.Models.Wastes;
 
 public sealed class Waste
 {
-    public required DateOnly CollectionDay { get; set; }
+    public string Id { get; init; } = Guid.NewGuid().ToString();
     
-    public required WasteType WasteType { get; set; }
+    public required DateOnly CollectionDay { get; init; }
+    
+    public required WasteType WasteType { get; init; }
 }
