@@ -29,7 +29,7 @@ public sealed class TokenWriter : ITokenWriter<ApplicationUser>
             .GetService<IUserClaimsPrincipalFactory<ApplicationUser>>();
 
         var claimsPrincipal = await claimFactory!.CreateAsync(entity);
-        var token = await WriteTokenAsync(claimsPrincipal, cancellationToken);
+        string token = await WriteTokenAsync(claimsPrincipal, cancellationToken);
 
         return token;
     }

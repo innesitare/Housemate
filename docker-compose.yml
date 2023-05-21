@@ -1,41 +1,41 @@
-version: '3.4'
+version: "3"
 services:
-  api-gateway:
-    build:
-      context: .
-      dockerfile: Housemate.ApiGateway/Dockerfile
-    ports:
-      - "5000:80"
-    depends_on:
-      - identity-api
-      - housing-task-api
-      - wastes-api
-      - weather-api
-
-  identity-api:
+  housemate.identityapi:
+    image: housemate.identityapi
     build:
       context: .
       dockerfile: Housemate.Backend/Housemate.IdentityApi/Dockerfile
     ports:
-      - "5001:80"
-
-  housing-task-api:
+      - "8001:80"
+        
+  housemate.housingtasksapi:
+    image: housemate.housingtasksapi
     build:
       context: .
       dockerfile: Housemate.Backend/Housemate.HousingTasksApi/Dockerfile
     ports:
-      - "5002:80"
+      - "8002:80"
 
-  wastes-api:
+  housemate.wastesapi:
+    image: housemate.wastesapi
     build:
       context: .
       dockerfile: Housemate.Backend/Housemate.WastesApi/Dockerfile
     ports:
-      - "5003:80"
+      - "8003:80"
 
-  weather-api:
+  housemate.weatherapi:
+    image: housemate.weatherapi
     build:
       context: .
       dockerfile: Housemate.Backend/Housemate.WeatherApi/Dockerfile
     ports:
-      - "5004:80"
+      - "8004:80"
+
+  housemate.apigateway:
+    image: housemate.apigateway
+    build:
+      context: .
+      dockerfile: Housemate.ApiGateway/Dockerfile
+    ports:
+      - "8000:80"

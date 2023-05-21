@@ -15,15 +15,14 @@ public sealed class WeatherService : IWeatherService
     public WeatherService(IWeatherHttpClient httpClient, IConfiguration configuration)
     {
         _httpClient = httpClient;
-        _apiKey = configuration["WeatherKey"];
+        _apiKey = configuration["WeatherService:Key"];
     }
 
     public async Task<WeatherCondition?> GetCurrentWeatherAsync(string city, CancellationToken cancellationToken = default)
     {
         string url = GetWeatherUrl(city, isForecast: false);
-        string responseContent = await _httpClient.GetStringAsync(url, cancellationToken);
+        var weatherResponse = await GetWeatherResponseAsync<WeatherConditionResponse>(url, cancellationToken);
 
-        var weatherResponse = JsonConvert.DeserializeObject<WeatherConditionResponse>(responseContent);
         if (weatherResponse == null || weatherResponse.Forecast.Count <= 0)
         {
             return null;
@@ -41,9 +40,8 @@ public sealed class WeatherService : IWeatherService
     public async Task<List<WeatherForecast>?> GetWeatherForecastAsync(string city, CancellationToken cancellationToken = default)
     {
         string url = GetWeatherUrl(city, isForecast: true);
-        string responseContent = await _httpClient.GetStringAsync(url, cancellationToken);
+        var weatherResponse = await GetWeatherResponseAsync<WeatherForecastResponse>(url, cancellationToken);
 
-        var weatherResponse = JsonConvert.DeserializeObject<WeatherForecastResponse>(responseContent);
         if (weatherResponse == null || weatherResponse.ForecastList.Count <= 0)
         {
             return null;
@@ -58,6 +56,13 @@ public sealed class WeatherService : IWeatherService
                 Description = forecastData.WeatherList.Count > 0 ? forecastData.WeatherList[0].Description : string.Empty
             }
         }).ToList();
+    }
+    
+    private async Task<T?> GetWeatherResponseAsync<T>(string url, CancellationToken cancellationToken) where T : class
+    {
+        string responseContent = await _httpClient.GetStringAsync(url, cancellationToken);
+
+        return JsonConvert.DeserializeObject<T>(responseContent);
     }
 
     private string GetWeatherUrl(string city, bool isForecast)
