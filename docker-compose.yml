@@ -1,6 +1,7 @@
 version: "3"
 services:
   housemate.identityapi:
+    container_name: housemate_identityapi
     image: housemate.identityapi
     build:
       context: .
@@ -9,6 +10,7 @@ services:
       - "8001:80"
         
   housemate.housingtasksapi:
+    container_name: housemate_housingtaskapi
     image: housemate.housingtasksapi
     build:
       context: .
@@ -17,6 +19,7 @@ services:
       - "8002:80"
 
   housemate.wastesapi:
+    container_name: housemate_wastesapi
     image: housemate.wastesapi
     build:
       context: .
@@ -25,6 +28,7 @@ services:
       - "8003:80"
 
   housemate.weatherapi:
+    container_name: housemate_weatherapi
     image: housemate.weatherapi
     build:
       context: .
@@ -33,9 +37,16 @@ services:
       - "8004:80"
 
   housemate.apigateway:
+    container_name: housemate_apigateway
     image: housemate.apigateway
     build:
       context: .
       dockerfile: Housemate.ApiGateway/Dockerfile
     ports:
       - "8000:80"
+
+  cache:
+    container_name: house_rediscache
+    image: redis:latest
+    ports:
+      - "6379:6379"

@@ -1,6 +1,6 @@
 ﻿namespace Housemate.Application.Helpers;
 
-internal static class CacheKeys
+public static class CacheKeys
 {
     public static class Student
     {

@@ -19,6 +19,7 @@ builder.Services.AddMvc();
 
 builder.Services.AddDatabase<ApplicationDbContext>(builder.Configuration["ApplicationStore:ConnectionString"]!);
 builder.Services.AddDatabase<IdentityDbContext>(builder.Configuration["IdentityStore:ConnectionString"]!);
+builder.Services.AddRedisCache(builder.Configuration["Redis:ConnectionString"]!);
 
 builder.Services.AddApplicationService(typeof(IRepository<>));
 builder.Services.AddApplicationService(typeof(ICacheService<>));

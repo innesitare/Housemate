@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Housemate.Application.Extensions;
 
-public static class DatabaseExtensions
+public static class DbContextExtensions
 {
     public static IServiceCollection AddDatabase<TEntity>(this IServiceCollection services, string connectionString)
         where TEntity : DbContext
