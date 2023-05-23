@@ -2,11 +2,11 @@
 using Housemate.Application.Models.Wastes;
 using Housemate.Contracts.Requests.WasteRequests;
 
-namespace Housemate.Application.Validators.WasteValidators;
+namespace Housemate.Application.Validaton.WasteValidaton;
 
-public sealed class UpdateWasteRequestValidator : AbstractValidator<UpdateWasteRequest>
+public sealed class CreateWasteRequestValidator : AbstractValidator<CreateWasteRequest>
 {
-    public UpdateWasteRequestValidator()
+    public CreateWasteRequestValidator()
     {
         RuleFor(request => request.CollectionDay)
             .NotEmpty()

@@ -2,7 +2,7 @@
 using Housemate.Application.Models.HousingTasks;
 using Housemate.Contracts.Responses.HousingTaskResponses;
 
-namespace Housemate.Application.Validators.HousingTaskValidators;
+namespace Housemate.Application.Validaton.HousingTaskValidaton;
 
 public sealed class HousingTaskResponseValidator : AbstractValidator<HousingTaskResponse>
 {

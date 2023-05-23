@@ -32,7 +32,7 @@ builder.Services.AddApplicationService<ITokenWriter<ApplicationUser>>();
 builder.Services.AddIdentityConfiguration();
 
 builder.Services.AddOptions<JwtSettings>()
-    .Bind(builder.Configuration.GetSection("Jwt"))
+    .Bind(builder.Configuration.GetSection(JwtSettings.EnvironmentKey))
     .ValidateOnStart();
 
 builder.Services.AddFluentValidationAutoValidation()

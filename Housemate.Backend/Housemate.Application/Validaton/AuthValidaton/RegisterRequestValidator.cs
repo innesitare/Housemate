@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Housemate.Contracts.Requests.AuthRequests;
 
-namespace Housemate.Application.Validators.AuthValidators;
+namespace Housemate.Application.Validaton.AuthValidaton;
 
 public sealed class RegisterRequestValidation : AbstractValidator<RegisterRequest>
 {

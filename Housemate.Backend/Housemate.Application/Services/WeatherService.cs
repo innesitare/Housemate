@@ -2,7 +2,8 @@
 using Housemate.Application.Models.Weather;
 using Housemate.Application.Models.Weather.Responses;
 using Housemate.Application.Services.Abstractions;
-using Microsoft.Extensions.Configuration;
+using Housemate.Application.Settings;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 
 namespace Housemate.Application.Services;
@@ -10,12 +11,12 @@ namespace Housemate.Application.Services;
 public sealed class WeatherService : IWeatherService
 {
     private readonly IWeatherHttpClient _httpClient;
-    private readonly string? _apiKey;
+    private readonly IOptionsMonitor<OpenWeatherApiSettings> _weatherApiOptions;
 
-    public WeatherService(IWeatherHttpClient httpClient, IConfiguration configuration)
+    public WeatherService(IWeatherHttpClient httpClient, IOptionsMonitor<OpenWeatherApiSettings> weatherApiOptions)
     {
         _httpClient = httpClient;
-        _apiKey = configuration["WeatherService:Key"];
+        _weatherApiOptions = weatherApiOptions;
     }
 
     public async Task<WeatherCondition?> GetCurrentWeatherAsync(string city, CancellationToken cancellationToken = default)
@@ -70,6 +71,6 @@ public sealed class WeatherService : IWeatherService
         const string baseUrl = "https://api.openweathermap.org/data/2.5/";
         const string units = "metric";
 
-        return $"{baseUrl}{(isForecast ? "forecast" : "weather")}?q={city}&appid={_apiKey}&units={units}";
+        return $"{baseUrl}{(isForecast ? "forecast" : "weather")}?q={city}&appid={_weatherApiOptions.CurrentValue.ApiKey}&units={units}";
     }
 }

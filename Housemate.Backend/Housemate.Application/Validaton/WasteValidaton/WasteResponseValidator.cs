@@ -2,7 +2,7 @@
 using Housemate.Application.Models.Wastes;
 using Housemate.Contracts.Responses.WasteResponses;
 
-namespace Housemate.Application.Validators.WasteValidators;
+namespace Housemate.Application.Validaton.WasteValidaton;
 
 public sealed class WasteResponseValidator : AbstractValidator<WasteResponse>
 {

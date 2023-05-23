@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Housemate.Contracts.Responses.StudentResponses;
 
-namespace Housemate.Application.Validators.StudentValidators;
+namespace Housemate.Application.Validaton.StudentValidaton;
 
 public sealed class StudentResponseValidator : AbstractValidator<StudentResponse>
 {

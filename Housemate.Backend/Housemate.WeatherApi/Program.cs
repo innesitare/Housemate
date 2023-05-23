@@ -7,6 +7,8 @@ using Housemate.Application.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration.AddAwsSecretsManager();
+
 builder.AddJwtBearer();
 
 builder.Services.AddControllers();
@@ -21,8 +23,12 @@ builder.Services.AddApplicationService<ITokenWriter<ApplicationUser>>();
 
 builder.Services.AddIdentityConfiguration();
 
+builder.Services.AddOptions<OpenWeatherApiSettings>()
+    .Bind(builder.Configuration.GetSection(OpenWeatherApiSettings.EnvironmentKey))
+    .ValidateOnStart();
+
 builder.Services.AddOptions<JwtSettings>()
-    .Bind(builder.Configuration.GetSection("Jwt"))
+    .Bind(builder.Configuration.GetSection(JwtSettings.EnvironmentKey))
     .ValidateOnStart();
 
 var app = builder.Build();

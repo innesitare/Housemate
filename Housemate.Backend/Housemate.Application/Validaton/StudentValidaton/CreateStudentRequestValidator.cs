@@ -1,11 +1,11 @@
 ﻿using FluentValidation;
 using Housemate.Contracts.Requests.StudentRequests;
 
-namespace Housemate.Application.Validators.StudentValidators;
+namespace Housemate.Application.Validaton.StudentValidaton;
 
-public sealed class UpdateStudentRequestValidator : AbstractValidator<UpdateStudentRequest>
+public sealed class CreateStudentRequestValidator : AbstractValidator<CreateStudentRequest>
 {
-    public UpdateStudentRequestValidator()
+    public CreateStudentRequestValidator()
     {
         RuleFor(request => request.Name)
             .NotEmpty();
