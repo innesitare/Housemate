@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <PackageReference Include="AWSSDK.SecretsManager.Caching" Version="1.0.5" />
+      <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.2.2" />
       <PackageReference Include="FluentValidation" Version="11.5.2" />
       <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
       <PackageReference Include="Kralizek.Extensions.Configuration.AWSSecretsManager" Version="1.7.0" />

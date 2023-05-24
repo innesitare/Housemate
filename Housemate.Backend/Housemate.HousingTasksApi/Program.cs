@@ -12,7 +12,7 @@ using Housemate.Application.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Configuration.AddAwsSecretsManager();
+builder.Configuration.AddAzureKeyVault();
 
 builder.AddJwtBearer();
 

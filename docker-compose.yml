@@ -1,67 +1,52 @@
 version: "3"    
 services:
   housemate.identityapi:
-    container_name: housemate_identityapi
-    image: housemate.identityapi
+    container_name: identity-api
+    image: identity-api
     build:
       context: .
       dockerfile: Housemate.Backend/Housemate.IdentityApi/Dockerfile
     ports:
       - "8001:80"
-    volumes:
-      - ~/.aws/credentials:/root/.aws/credentials:ro
-      - ~/.aws/config:/root/.aws/config:ro
 
   housemate.housingtasksapi:
-    container_name: housemate_housingtaskapi
-    image: housemate.housingtasksapi
+    container_name: housing-tasks-api
+    image: housing-task-api
     build:
       context: .
       dockerfile: Housemate.Backend/Housemate.HousingTasksApi/Dockerfile
     ports:
       - "8002:80"
-    volumes:
-      - ~/.aws/credentials:/root/.aws/credentials:ro
-      - ~/.aws/config:/root/.aws/config:ro
 
   housemate.wastesapi:
-    container_name: housemate_wastesapi
-    image: housemate.wastesapi
+    container_name: wastes-api
+    image: wastes-api
     build:
       context: .
       dockerfile: Housemate.Backend/Housemate.WastesApi/Dockerfile
     ports:
       - "8003:80"
-    volumes:
-      - ~/.aws/credentials:/root/.aws/credentials:ro
-      - ~/.aws/config:/root/.aws/config:ro
 
   housemate.weatherapi:
-    container_name: housemate_weatherapi
-    image: housemate.weatherapi
+    container_name: weather-api
+    image: weather-api
     build:
       context: .
       dockerfile: Housemate.Backend/Housemate.WeatherApi/Dockerfile
     ports:
       - "8004:80"
-    volumes:
-      - ~/.aws/credentials:/root/.aws/credentials:ro
-      - ~/.aws/config:/root/.aws/config:ro
 
   housemate.apigateway:
-    container_name: housemate_apigateway
-    image: housemate.apigateway
+    container_name: api-gateway
+    image: api-gateway
     build:
       context: .
       dockerfile: Housemate.ApiGateway/Dockerfile
     ports:
       - "8000:80"
-    volumes:
-      - ~/.aws/credentials:/root/.aws/credentials:ro
-      - ~/.aws/config:/root/.aws/config:ro
 
   cache:
-    container_name: housemate_rediscache
+    container_name: redis-cache
     image: redis:latest
     ports:
       - "6379:6379"

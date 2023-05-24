@@ -16,10 +16,10 @@ public sealed class TokenWriter : ITokenWriter<ApplicationUser>
     private readonly IServiceScopeFactory _scopeFactory;
     private readonly JwtSettings _jwtSettings;
 
-    public TokenWriter(IServiceScopeFactory scopeFactory, IOptions<JwtSettings> jwtSettings)
+    public TokenWriter(IServiceScopeFactory scopeFactory, IOptionsMonitor<JwtSettings> jwtSettings)
     {
         _scopeFactory = scopeFactory;
-        _jwtSettings = jwtSettings.Value;
+        _jwtSettings = jwtSettings.CurrentValue;
     }
 
     public async Task<string> WriteTokenAsync(ApplicationUser entity, CancellationToken cancellationToken = default)
@@ -32,7 +32,7 @@ public sealed class TokenWriter : ITokenWriter<ApplicationUser>
         string token = await WriteTokenAsync(claimsPrincipal, cancellationToken);
 
         return token;
-    }
+    }   
 
     public Task<string> WriteTokenAsync(ClaimsPrincipal claimsPrincipal, CancellationToken cancellationToken = default)
     {

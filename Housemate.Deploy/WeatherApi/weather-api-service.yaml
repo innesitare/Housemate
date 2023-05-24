@@ -1,0 +1,13 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: weather-api
+spec:
+  selector:
+    app: weather-api
+  ports:
+    - protocol: TCP
+      port: 8084
+      targetPort: 80
+  type: ClusterIP
+  
