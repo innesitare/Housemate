@@ -12,6 +12,8 @@ using Housemate.Application.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration.AddAwsSecretsManager();
+
 builder.AddJwtBearer();
 
 builder.Services.AddControllers();

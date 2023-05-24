@@ -17,7 +17,7 @@ builder.Services.AddDatabase<IdentityDbContext>(builder.Configuration["IdentityS
 
 builder.Services.AddApplicationService<IWeatherHttpClient>();
 builder.Services.AddApplicationService<IWeatherService>();
-
+    
 builder.Services.AddApplicationService<IAuthService>();
 builder.Services.AddApplicationService<ITokenWriter<ApplicationUser>>();
 

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Housemate.WeatherApi.Controllers;
 
 [ApiController]
-// [Authorize(Policy = "Bearer")]
+[Authorize(Policy = "Bearer")]
 public sealed class WeatherController : ControllerBase
 {
     private readonly IWeatherService _weatherService;
