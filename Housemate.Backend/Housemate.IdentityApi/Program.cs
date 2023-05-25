@@ -3,12 +3,12 @@ using FluentValidation.AspNetCore;
 using Housemate.Application.Context;
 using Housemate.Application.Extensions;
 using Housemate.Application.Filters;
-using Housemate.Application.Helpers;
 using Housemate.Application.Models.Identity;
 using Housemate.Application.Repositories.Abstractions;
 using Housemate.Application.Repositories.CachedRepositories;
 using Housemate.Application.Services.Abstractions;
 using Housemate.Application.Settings;
+using Housemate.Application.Validaton;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -9,6 +9,7 @@ using Housemate.Application.Repositories.Abstractions;
 using Housemate.Application.Repositories.CachedRepositories;
 using Housemate.Application.Services.Abstractions;
 using Housemate.Application.Settings;
+using Housemate.Application.Validaton;
 
 var builder = WebApplication.CreateBuilder(args);
 
