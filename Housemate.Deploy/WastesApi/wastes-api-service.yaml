@@ -1,0 +1,13 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: wastes-api
+spec:
+  selector:
+    app: wastes-api
+  ports:
+    - protocol: TCP
+      port: 8083
+      targetPort: 80
+  type: ClusterIP
+  

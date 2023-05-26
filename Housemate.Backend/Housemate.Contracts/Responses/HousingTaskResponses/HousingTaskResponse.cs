@@ -1,6 +1,6 @@
 ﻿namespace Housemate.Contracts.Responses.HousingTaskResponses;
 
-public class HousingTaskResponse
+public sealed class HousingTaskResponse
 {
     public required string Id { get; init; }
     

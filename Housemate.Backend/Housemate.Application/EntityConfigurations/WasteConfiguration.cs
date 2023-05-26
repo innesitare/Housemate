@@ -9,7 +9,10 @@ public sealed class WasteConfiguration : IEntityTypeConfiguration<Waste>
     public void Configure(EntityTypeBuilder<Waste> builder)
     {
         builder.ToTable("Wastes")
-            .HasKey(w => w.CollectionDay);
+            .HasKey(w => w.Id);
+        
+        builder.Property(w => w.Id)
+            .IsRequired();
 
         builder.Property(w => w.CollectionDay)
             .IsRequired();

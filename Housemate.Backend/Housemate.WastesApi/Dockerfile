@@ -6,6 +6,8 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["Housemate.Backend/Housemate.WastesApi/Housemate.WastesApi.csproj", "Housemate.Backend/Housemate.WastesApi/"]
+COPY ["Housemate.Backend/Housemate.Application/Housemate.Application.csproj", "Housemate.Backend/Housemate.Application/"]
+COPY ["Housemate.Backend/Housemate.Contracts/Housemate.Contracts.csproj", "Housemate.Backend/Housemate.Contracts/"]
 RUN dotnet restore "Housemate.Backend/Housemate.WastesApi/Housemate.WastesApi.csproj"
 COPY . .
 WORKDIR "/src/Housemate.Backend/Housemate.WastesApi"
