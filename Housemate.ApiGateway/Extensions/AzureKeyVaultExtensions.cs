@@ -1,5 +1,5 @@
 ﻿using Azure.Identity;
-using Housemate.Application.Providers;
+using Housemate.ApiGateway.Providers;
 
 namespace Housemate.ApiGateway.Extensions;
 

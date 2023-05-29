@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Housemate.Application.Context;
 
-public class ApplicationDbContext : DbContext
+public sealed class ApplicationDbContext : DbContext
 {
     public required DbSet<Student> Students { get; init; }
     public required DbSet<HousingTask> HousingTasks { get; init; }

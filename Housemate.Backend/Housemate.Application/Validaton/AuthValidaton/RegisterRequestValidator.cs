@@ -3,9 +3,9 @@ using Housemate.Contracts.Requests.AuthRequests;
 
 namespace Housemate.Application.Validaton.AuthValidaton;
 
-public sealed class RegisterRequestValidation : AbstractValidator<RegisterRequest>
+public sealed class RegisterRequestValidator : AbstractValidator<RegisterRequest>
 {
-    public RegisterRequestValidation()
+    public RegisterRequestValidator()
     {
         RuleFor(x => x.Name)
             .NotEmpty();

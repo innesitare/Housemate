@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Housemate.Application.Context;
 
-public class IdentityDbContext : IdentityDbContext<ApplicationUser>
+public sealed class IdentityDbContext : IdentityDbContext<ApplicationUser>
 {
     public IdentityDbContext(DbContextOptions<IdentityDbContext> options) : base(options)
     {
